@@ -7,7 +7,7 @@ namespace EmergentGameEngine.Abstraction.Entities
         string Name { get; }
         ulong Id { get; }
         IEnumerable<string> Tags { get; }
-        string Category { get; }        
+        string Category { get; }
         IEntityRegistry Registry { get; }
     }
 }

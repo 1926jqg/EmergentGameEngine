@@ -1,8 +1,6 @@
 ﻿using EmergentGameEngine.CharacterModel.Values;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace EmergentGameEngine.CharacterModel.UnitTests.TestData.TestDataGenerators
 {

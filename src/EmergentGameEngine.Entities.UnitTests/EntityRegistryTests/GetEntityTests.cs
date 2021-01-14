@@ -49,7 +49,7 @@ namespace EmergentGameEngine.Entities.UnitTests.EntityRegistryTests
 
             //Assert
             Assert.Equal(entity, result);
-        }        
+        }
 
         [Fact]
         public void TestGetExistingEntityByTypeReturnsEntity()
@@ -88,7 +88,7 @@ namespace EmergentGameEngine.Entities.UnitTests.EntityRegistryTests
             _sut.TryCreateEntity(out AEntityMock entity, ("A", "name"));
 
             //Act
-            var result =_sut.TryGetEntity(entity.Id, out BEntityMock _);
+            var result = _sut.TryGetEntity(entity.Id, out BEntityMock _);
 
             //Assert
             Assert.False(result);

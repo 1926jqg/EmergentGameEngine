@@ -40,7 +40,7 @@ namespace EmergentGameEngine.Entities.UnitTests.EntityRegistryTests
         {
             //Arrange
             _sut.TryAddFactory(new AEntityFactoryFake());
-            var factory = new AEntityFactoryFake();            
+            var factory = new AEntityFactoryFake();
 
             //Act            
             var result = _sut.TryAddFactory(factory);
@@ -54,7 +54,7 @@ namespace EmergentGameEngine.Entities.UnitTests.EntityRegistryTests
         {
             //Arrange
             _sut.TryAddFactory(new AEntityFactoryFake());
-            var factory = new BEntityFactoryFake();            
+            var factory = new BEntityFactoryFake();
 
             //Act
             var result = _sut.TryAddFactory(factory);

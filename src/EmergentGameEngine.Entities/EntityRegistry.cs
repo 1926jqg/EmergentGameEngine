@@ -9,7 +9,7 @@ namespace EmergentGameEngine.Entities
         private readonly IDictionary<string, IEntityFactory> _entityFactoriesByCategory = new Dictionary<string, IEntityFactory>();
         private readonly IDictionary<Type, IEntityFactory> _entityFactoriesByType = new Dictionary<Type, IEntityFactory>();
         private readonly IDictionary<ulong, IEntity> _entities = new Dictionary<ulong, IEntity>();
-        private ulong _nextId;        
+        private ulong _nextId;
 
         protected ulong GetNextId()
         {
@@ -17,12 +17,12 @@ namespace EmergentGameEngine.Entities
         }
 
         protected bool TryGetFactory<T>(out IEntityFactory<T> entityFactory) where T : class, IEntity
-        {            
+        {
             if (!_entityFactoriesByType.TryGetValue(typeof(T), out IEntityFactory genericFactory))
             {
                 entityFactory = null;
                 return false;
-            }                
+            }
             entityFactory = genericFactory as IEntityFactory<T>;
             return genericFactory is IEntityFactory<T>;
         }
@@ -39,8 +39,8 @@ namespace EmergentGameEngine.Entities
                 return false;
             category = factory.Category;
             return true;
-        }    
-        
+        }
+
         protected void AddEntity(IEntity entity)
         {
             _entities.Add(entity.Id, entity);
@@ -57,7 +57,7 @@ namespace EmergentGameEngine.Entities
 
         public bool TryAddFactory<T>(IEntityFactory<T> entityFactory) where T : class, IEntity
         {
-            if(TryGetFactory(entityFactory.Category, out _) ||
+            if (TryGetFactory(entityFactory.Category, out _) ||
                 TryGetFactory<T>(out _))
             {
                 return false;
@@ -102,7 +102,7 @@ namespace EmergentGameEngine.Entities
         public bool TryGetEntity<T>(ulong id, out T entity) where T : class, IEntity
         {
             entity = default;
-            if(!TryGetEntity(id, out IEntity genericEntity) || 
+            if (!TryGetEntity(id, out IEntity genericEntity) ||
                 !TryGetCategoryForType(typeof(T), out string category) ||
                 genericEntity.Category != category)
             {
@@ -110,6 +110,6 @@ namespace EmergentGameEngine.Entities
             }
             entity = genericEntity as T;
             return true;
-        }                
+        }
     }
 }

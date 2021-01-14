@@ -16,7 +16,7 @@ namespace EmergentGameEngine.CharacterModel.Values
 
         public override bool Equals(object obj)
         {
-            return obj is Preference other ? Equals(other) : false;
+            return obj is Preference other && Equals(other);
         }
 
         public bool Equals(Preference other)

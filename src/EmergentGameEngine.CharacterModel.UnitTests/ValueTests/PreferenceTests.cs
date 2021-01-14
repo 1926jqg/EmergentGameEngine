@@ -225,7 +225,7 @@ namespace EmergentGameEngine.CharacterModel.UnitTests.ValueTests
         }
 
         [Theory]
-        [ClassData(typeof(LessThanPreferenceTestDataGenerator))]        
+        [ClassData(typeof(LessThanPreferenceTestDataGenerator))]
         public void TestGreaterThanOrEqualReturnsFalse(Opinion opinion1, int magnitude1, Opinion opinion2, int magnitude2)
         {
             //Arrange
